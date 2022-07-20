@@ -1,0 +1,112 @@
+/* navbar */
+    .navbar-brand{
+        font-family: viga;
+        size: 32px;
+    }
+    .top-side{
+    color: yellow !important;
+    position: relative;
+    z-index: 1;
+    }
+
+    .img-hover-zoom {
+      background: white;
+      overflow: hidden;
+    }
+    .img-hover-zoom--basic img {
+      transition: transform .5s ease;
+    }
+
+    .img-hover-zoom--basic:hover img {
+      transform: scale(1.5);
+    }
+/* Jumbotron */
+    .jumbotron{
+        background-size: cover;
+        height:369px;
+        width: 100%;
+    }
+    .jumbotron .container{
+        position: relative;
+        z-index: 1;
+    }
+    .jumbotron::after{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+    }
+    .jumbotron .display-4{
+        color: white;
+        margin-top: auto;
+        font-weight: 100;
+        font-size: 25px;
+        text-shadow: rgba(0, 0, 0, 0.7);
+        margin-bottom: 30px;
+        text-transform: uppercase;
+
+    }
+    .jumbotron .display-4 span{
+        font-weight: 500;
+    }
+    .maps{
+        margin-top: 35px;
+    }
+    .footer{
+        margin-top: 30px;
+    }
+    .text-footer{
+        text-align: center;
+    }
+    iframe{
+        width: 470px;
+        height: 365px;
+    }
+    .txt{
+        font-family:viga;
+    }
+    
+    .jumbotron{
+            margin-top: auto;
+            height: 200px;
+    }
+
+/* DESKTOP VERSION */
+    @media (min-width: 992px) {
+        .jumbotron{
+            width: 100%;
+            font-family: viga;
+            margin-top: auto;
+        }
+        .navbar-brand, .nav-link{
+            color: black !important;
+        }
+        .nav-link{
+            margin-right: 10px; 
+        }
+        .nav-link:hover::after{
+            content: '';
+            display: block;
+            border-bottom: 3px solid black;
+            width: 50%;
+            margin: auto;
+            padding-bottom: 5px;
+            margin-bottom: -8px;
+        }
+        .jumbotron .display-4{
+            color: black;
+            font-size: 62px;
+            margin-top: 10px;
+        }
+        .text-jum{
+            position: justify;
+            margin-top: 150px;
+        }
+        iframe{
+        width: 745px;
+        height: 365px;
+        }
+    }
+
