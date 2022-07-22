@@ -1,0 +1,13 @@
+project
+  - id (primary key)
+  - judul
+  - deskripsi
+  - link youtube
+  - link cover
+  - author (foreign key)
+  
+author
+  - npm (primary key)
+  - nama
+  - angkatan
+  - program studi
