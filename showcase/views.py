@@ -10,3 +10,7 @@ def showcase(request):
     return render(request, 'showcase/showcase.html', {
         "projects": Project.objects.all()
     });
+def detail(request):
+    return render(request, 'showcase/detail.html', {
+        "projects": Project.objects.all()
+    });

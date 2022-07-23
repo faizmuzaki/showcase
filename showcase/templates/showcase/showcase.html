@@ -1,26 +1,9 @@
 {% extends "showcase/layout.html" %}
 
 {% block body %}
-	<nav class="navbar justify-content-center navbar-expand-lg navbar-light">
-		<div class="container">
-			<a class="navbar-brand logo-top" href="{% url 'index' %}">Showcase</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-				<div class="navbar-nav">
-					<a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
-					<a class="nav-link active" aria-current="page" href="{% url 'index' %}#about">Deskripsi</a>
-					<a class="nav-link active" href="{% url 'showcase' %}">Showcase</a>
-				</div>
-			</div>
-		</div>
-	</nav>
 	<div class="album py-5 bg-light">
 		<div class="container">
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
 				{% for i in projects %}
 					<div class="col">
 						<div class="card shadow-sm">
@@ -35,7 +18,7 @@
 								<p class="card-text">{{ i.judul }}</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<a href="{% url 'detail' %}" class="btn btn-sm btn-outline-secondary">View</a>
 									</div>
 									<small class="text-muted">Author : {{ i.author }}</small>
 								</div>
