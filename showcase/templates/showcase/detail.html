@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 offset-lg-3 col-12 text-center">
-				<h1>Judul Aplikasi</h1>
+				<h1>{{ project.judul }}</h1>
 			</div>
 		</div>
 		<div class="row">
@@ -14,15 +14,12 @@
 			</div>
 			<div class="py-3 col-md-4">
 			        <h5 class="featurette-heading">Author Details </h5>
-			        <p class="font-monospace">Nama : </p>
-			        <p class="font-monospace">NPM : </p>
-			        <p class="font-monospace">Angkatan : </p>
-			        <p class="font-monospace">Program Studi : </p>
-			        <h5 class="featurette-heading	">Deskripsi program: </h5>
-			        <p class="font-monospace">	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			        <p class="font-monospace">Nama : {{ project.author.nama }}</p>
+			        <p class="font-monospace">NPM : {{ project.author.npm }}</p>
+			        <p class="font-monospace">Angkatan : {{ project.author.angkatan }}</p>
+			        <p class="font-monospace">Program Studi : {{ project.author.program_studi }}</p>
+			        <h5 class="featurette-heading	">Deskripsi Project: </h5>
+			        <p class="font-monospace">	{{ project.deskripsi }}
 			      </div>
 			    </div>
 		</div>
