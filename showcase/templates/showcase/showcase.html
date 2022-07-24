@@ -30,6 +30,17 @@
 		</div>
 	</div>
 
+	{% if projects.has_previous %}
+	<a href="?page=1">First</a>
+	<a href="?page={{ projects.previous_page_number }}">Previous</a>
+	{% endif %}
+	
+	Page {{ projects.number }} of {{ projects.paginator.num_pages }}
+
+	{% if projects.has_next %}
+	<a href="?page={{ projects.next_page_number }}">Next</a>
+	<a href="?page={{ projects.paginator.num_pages }}">Last</a>
+	{% endif %}
 
 	<footer class="footer bg-light">
 		<hr class="featurette-divider">
