@@ -29,27 +29,32 @@
 			</div>
 		</div>
 	</div>
-
-	{% if projects.has_previous %}
-	<a href="?page=1">First</a>
-	<a href="?page={{ projects.previous_page_number }}">Previous</a>
-	{% endif %}
-	
-	Page {{ projects.number }} of {{ projects.paginator.num_pages }}
-
-	{% if projects.has_next %}
-	<a href="?page={{ projects.next_page_number }}">Next</a>
-	<a href="?page={{ projects.paginator.num_pages }}">Last</a>
-	{% endif %}
-
-	<footer class="footer bg-light">
-		<hr class="featurette-divider">
+	<div class="bg-light">
 		<div class="container">
-			<div class="row">
-				<p class="text-footer"> &copy; Himakom</p>
+			<nav aria-label="Page navigation example">
+				<ul class="pagination">
+					{% if projects.has_previous %}
+					<li class="page-item"><a class="page-link" href="?page={{ projects.previous_page_number }}">Previous</a></li>
+					{% endif %}
+					
+					<li class="page-link bg-light">Page {{ projects.number }} of {{ projects.paginator.num_pages }}</li>
+					{% if projects.has_next %}
+					<li class="page-item"><a class="page-link" href="?page={{ projects.next_page_number }}">Next</a></li>
+					<li class="page-item"><a class="page-link" href="?page={{ projects.paginator.num_pages }}">Last</a></li>
+					{% endif %}
+				</ul>
+			</nav>
+		</div>	
+<br>
+		<footer class="footer py-5">
+			<hr class="featurette-divider">
+			<div class="container">
+				<div class="row">
+					<p class="text-footer"> &copy;Himakom</p>
+				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
+	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
