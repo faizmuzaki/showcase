@@ -43,6 +43,8 @@ def showcase(request):
 def detail(request):
     if request.method == 'GET':
         id = request.GET['id']
+        if not id.isdigit():
+            id = 0
 
     project = get_object_or_404(Project, pk=id)
     
