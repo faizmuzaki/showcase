@@ -4,10 +4,16 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 import requests
 from .models import *
+import random
 # Create your views here.
 
 def index(request):
-    return render(request, 'showcase/index.html')
+    project_list = list(Project.objects.all())
+    hl = random.sample(project_list, 3)
+
+    return render(request, 'showcase/index.html', {
+        "sample" : hl
+    })
 
 def showcase(request):
 
