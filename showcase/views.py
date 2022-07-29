@@ -7,7 +7,12 @@ from .models import *
 # Create your views here.
 
 def index(request):
-    return render(request, 'showcase/index.html')
+    project_list = list(Project.objects.all())
+    hl = random.sample(project_list, 3)
+
+    return render(request, 'showcase/index.html', {
+        "sample" : hl
+    })
 
 def showcase(request):
 
