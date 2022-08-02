@@ -34,7 +34,7 @@ def showcase(request):
         if pq.exists():
             ex = True
         # pagination
-        p = Paginator(pq, 9)
+        p = Paginator(pq, 6)
         page = request.GET.get('page')
         project_list = p.get_page(page)
 
