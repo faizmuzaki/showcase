@@ -1,85 +1,92 @@
-{% extends "showcase/layout.html" %}
-
-{% block body %}
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="text-jum">Himakom Showcase</h1>
-        </div>
+{% extends "showcase/layout.html" %} {% block body %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-jum">
+        <h1 class="main-title">
+            Himakom
+            <span id="typed" style="color: #FAC213;"></span>
+        </h1>
     </div>
-    <hr class="featurette-divider">
-    <section id="about" class="about bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6"></div>
-                <div class="col-md-5 text-about">
-                    <h2 class="featurette-heading">Deskripsi</h2>
-                    <p class="font-monospace">
-                        Himakom Project Showcase adalah "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                        laborum."
-                    </p>
-                </div>
+</div>
+<!-- <hr class="featurette-divider"> -->
+<section id="about" class="about bg-light">
+    <div class="container-fluid py-5">
+        <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-5 text-about">
+                <h2 class="featurette-heading font-mont">Deskripsi</h2>
+                <p class="font-inter">
+                    Himakom Project Showcase adalah "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
             </div>
         </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div id="carouselExampleCaptions" class="carousel slide col-md-8 py-3 mx-auto" data-bs-ride="carousel">
+            <h2 class="text-center">Last Showcase</h2>
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class=""></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" class="active" aria-current="true"></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner mt-3">
+                <div class="carousel-item">
+                    <img src="{{ sample.0.link_cover }}" class="d-block w-100" width="500px" height="500px" alt="{{sample.0.judul}}">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ sample.0.judul }}</h5>
+                        <p>{{ sample.0.deskripsi }}.</p>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img src="{{ sample.1.link_cover }}" class="d-block w-100" width="500px" height="500px" alt="{{sample.1.judul}}">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ sample.1.judul }}</h5>
+                        <p>{{ sample.1.deskripsi }}.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ sample.2.link_cover }}" class="d-block w-100" width="500px" height="500px" alt="{{sample.2.judul}}">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ sample.2.judul }}</h5>
+                        <p>{{ sample.2.deskripsi }}.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
 
-    </section>
+<footer class="footer bg-light">
+    <hr class="featurette-divider">
     <div class="container">
         <div class="row">
-            <div id="carouselExampleCaptions" class="carousel slide col-md-8 py-3 mx-auto" data-bs-ride="carousel">
-                <h2 class="text-center mt-3">Last Showcase</h2>
-                <ol class="carousel-indicators">
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class=""></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" class="active" aria-current="true"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner mt-3">
-                    <div class="carousel-item">
-                        <img src="{{ sample.0.link_cover }}" class="d-block w-100" width="500px" height="500px" alt="{{sample.0.judul}}">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ sample.0.judul }}</h5>
-                            <p>{{ sample.0.deskripsi }}.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item active">
-                        <img src="{{ sample.1.link_cover }}" class="d-block w-100" width="500px" height="500px" alt="{{sample.1.judul}}">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ sample.1.judul }}</h5>
-                            <p>{{ sample.1.deskripsi }}.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{ sample.2.link_cover }}" class="d-block w-100" width="500px" height="500px" alt="{{sample.2.judul}}">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>{{ sample.2.judul }}</h5>
-                            <p>{{ sample.2.deskripsi }}.</p>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </a>
-            </div>
+            <p class="text-footer"> &copy; Himakom</p>
         </div>
     </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
 
-        <footer class="footer bg-light">
-            <hr class="featurette-divider">
-            <div class="container">
-                <div class="row">
-                    <p class="text-footer"> &copy; Himakom</p>
-                </div>
-            </div>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
-        <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+<!-- typed -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<!-- personal script -->
+<script>
+    var typed = new Typed('#typed', {
+        strings: ['Showcase!'],
+        typeSpeed: 70,
+        delaySpeed: 80,
+        loop: true
+    });
+</script>
 {% endblock %}
