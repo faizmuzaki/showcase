@@ -1,7 +1,7 @@
 {% extends "showcase/layout.html" %} {% block body %}
 <div class="jumbotron jumbotron-fluid">
     <div class="container text-jum">
-        <h1 class="main-title">
+        <h1 class="text-title">
             Himakom
             <span id="typed" style="color: #FAC213;"></span>
         </h1>
@@ -9,12 +9,12 @@
 </div>
 <!-- <hr class="featurette-divider"> -->
 <section id="about" class="about bg-light">
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-4">
         <div class="row">
             <div class="col-md-6"></div>
             <div class="col-md-5 text-about">
-                <h2 class="featurette-heading font-mont">Deskripsi</h2>
-                <p class="font-inter">
+                <h2 class="featurette-heading">Deskripsi</h2>
+                <p class="">
                     Himakom Project Showcase adalah "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 </p>
@@ -23,9 +23,9 @@
     </div>
 </section>
 <div class="container">
-    <div class="row">
-        <div id="carouselExampleCaptions" class="carousel slide col-md-8 py-3 mx-auto" data-bs-ride="carousel">
-            <h2 class="text-center">Last Showcase</h2>
+    <div class="row text-show">
+        <div id="carouselExampleCaptions" class="carousel slide col-md-8 py-4" data-bs-ride="carousel">
+            <h2 class="">Latest Showcase</h2>
             <ol class="carousel-indicators">
                 <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class=""></li>
                 <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" class="active" aria-current="true"></li>
@@ -85,7 +85,7 @@
     var typed = new Typed('#typed', {
         strings: ['Showcase!'],
         typeSpeed: 70,
-        delaySpeed: 80,
+        delaySpeed: 200,
         loop: true
     });
 </script>
