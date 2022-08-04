@@ -16,6 +16,7 @@ class Project(models.Model):
     deskripsi = models.TextField(max_length=1000)
     link_youtube = models.CharField(max_length=64)
     link_cover = models.CharField(max_length=500)
+    link_github = models.CharField(max_length=500, default='')
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='made_by')
 
     # This should touch before saving

@@ -1,7 +1,7 @@
 import urllib.parse
 
 def video_id(value):
-    
+
     query = urllib.parse.urlparse(value)
     if query.hostname == 'youtu.be':
         return query.path[1:]
