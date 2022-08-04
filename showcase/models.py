@@ -1,4 +1,5 @@
 from django.db import models
+from .url_handler import video_id
 
 # Create your models here.
 class Author(models.Model):
@@ -16,6 +17,11 @@ class Project(models.Model):
     link_youtube = models.CharField(max_length=64)
     link_cover = models.CharField(max_length=500)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='made_by')
+
+    # This should touch before saving
+    def save(self, *args, **kwargs):
+        self.link_youtube = "https://www.youtube.com/embed/" + video_id(self.link_youtube)
+        super(Project, self).save(*args, **kwargs)
 
     def __str__(self):
        return self.judul
