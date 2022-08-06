@@ -104,7 +104,7 @@ iframe {
 
 .text-jum {
     position: justify;
-    margin: 20vh auto 5vh auto;
+    margin: 18vh auto 5vh auto;
     /* margin-top: 150px; */
     /* font-family: viga; */
 }
@@ -137,16 +137,14 @@ iframe {
     background-color: rgba(250, 192, 19, 0.75);
 }
 
-
-/* .custom-shape-divider-bottom {
-    position: absolute;
+.custom-shape-divider-bottom,
+.custom-shape-divider-top {
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-} */
+}
 
 .custom-shape-divider-bottom svg {
     position: relative;
