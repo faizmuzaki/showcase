@@ -172,6 +172,10 @@ iframe {
 
 /* showcase */
 
+.showcase>.container {
+    margin: 5vh auto;
+}
+
 .carousel-inner {
     text-align: center;
 }
