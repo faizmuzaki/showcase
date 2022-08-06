@@ -112,7 +112,7 @@ iframe {
 .text-title {
     font-family: 'Montserrat';
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 
@@ -122,18 +122,15 @@ iframe {
     text-align: justify;
 }
 
-.text-about h2 {
-    font-family: 'Montserrat';
-    font-weight: 600;
-}
-
-.text-about p {
-    font-family: 'RUbik';
-}
-
+.text-about h2,
 .text-show h2 {
     font-family: 'Montserrat';
     font-weight: 600;
+    font-size: 2.5rem;
+}
+
+.text-about p {
+    font-family: 'Rubik';
 }
 
 .about {
