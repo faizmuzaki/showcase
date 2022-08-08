@@ -176,10 +176,6 @@ iframe {
     margin: 5vh auto;
 }
 
-.carousel-inner {
-    text-align: center;
-}
-
 .carousel-item {
     width: 100%;
     height: 470px;
@@ -193,7 +189,8 @@ iframe {
 
 .carousel-inner>.carousel-item>.carousel-caption {
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    text-indent: 1pt;
+    background-color: rgba(197, 191, 19, 0.3)
 }
 
 
