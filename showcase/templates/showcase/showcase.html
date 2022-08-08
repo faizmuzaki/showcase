@@ -24,11 +24,11 @@
 				{% if exist %}
 					{% for i in projects %}
 						<div class="col">
-							<div class="card shadow-sm">
+							<div class="card shadow-sm img-hover-zoom img-hover-zoom--basic">
 								<img src="{{ i.link_cover }}" width="100%" height="225">
 								<div class="card-body">
 									<p class="card-text">{{ i.judul }}</p>
-									<div class="d-flex justify-content-between align-items-center">
+									<div class="d-flex justify-content-between align-items-center ">
 										<div class="btn-group">
 											<a href="{% url 'detail' %}?id={{i.id}}" class="btn btn-sm btn-outline-secondary">View</a>
 										</div>
