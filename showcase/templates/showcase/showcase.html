@@ -1,94 +1,88 @@
-{% extends "showcase/layout.html" %}
-
-{% block body %}
-	<div class="album py-5 bg-light">
-		<div class="container">
-			<form class="row g-3" method="GET" action="{% url 'showcase' %}">
-			  	<div class="input-group py-3">
-              		<div class="col-md-2">
-				    	<label for="search" class="visually-hidden">search</label>
-				    	<input type="text" class="form-control" id="search" name="search" placeholder="Search">
-				  	</div>
-				  	<div class="col-md-2">
-				  		<button type="submit" class="btn btn-outline-secondary">
-                  		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-				  		<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-						</svg>
-				        <span class="visually-hidden">Button</span>
-				        </button>
-				  	</div>
-            	</div>
+{% extends "showcase/layout.html" %} {% block body %}
+<div class="showcase">
+    <div class="album py-5">
+        <div class="container">
+            <form class="row g-3" method="GET" action="{% url 'showcase' %}">
+                <div class="input-group py-3">
+                    <div class="col-md-2">
+                        <label for="search" class="visually-hidden">search</label>
+                        <input type="text" class="form-control" id="search" name="search" placeholder="Search">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-outline-secondary">
+							  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+							  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+							</svg>
+							<span class="visually-hidden">Button</span>
+							</button>
+                    </div>
+                </div>
             </form>
 
-			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-				{% if exist %}
-					{% for i in projects %}
-						<div class="col">
-							<div class="card shadow-sm img-hover-zoom img-hover-zoom--basic">
-								<img src="{{ i.link_cover }}" width="100%" height="225">
-								<div class="card-body">
-									<p class="card-text">{{ i.judul }}</p>
-									<div class="d-flex justify-content-between align-items-center ">
-										<div class="btn-group">
-											<a href="{% url 'detail' %}?id={{i.id}}" class="btn btn-sm btn-outline-secondary">View</a>
-										</div>
-										<small class="text-muted">Author : {{ i.author }}</small>
-									</div>
-								</div>
-							</div>
-						</div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% if exist %} {% for i in projects %}
+                <div class="col">
+                    <div class="card shadow-sm img-hover-zoom img-hover-zoom--basic">
+                        <img src="{{ i.link_cover }}">
+                        <div class="card-body">
+                            <p class="card-text">{{ i.judul }}</p>
+                            <div class="d-flex justify-content-between align-items-center ">
+                                <div class="btn-group">
+                                    <a href="{% url 'detail' %}?id={{i.id}}" class="btn btn-sm btn-outline-secondary p-2"><i class="bi bi-eye-fill"> </i>View</a>
+                                </div>
+                                <small>Author : {{ i.author }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %} {% else %}
+                <p>Not Found</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <nav aria-label="Page navigation example">
+            {% if projects.has_other_pages %}
+            <ul class="pagination justify-content-center">
+                {% if projects.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ projects.previous_page_number }}">«</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link disabled">«</a>
+                </li>
+                {% endif %} {% for i in projects.paginator.page_range %} {% if projects.number == i %}
+                <li class="page-item active"><span class="page-link">{{ i }}</li>
+						  {% else %}
+							<li><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+						  {% endif %}
 					{% endfor %}
-				{% else %}
-						<p>Not Found</p>
-				{% endif %}
+					{% if projects.has_next %}
+						  <li class="page-item">
+							  <a class="page-link" href="?page={{ projects.next_page_number }}">»</a>
+						  </li>
+					{% else %}
+						<li class="page-item disabled">
+							  <a class="page-link disabled">»</a>
+						  </li>
+					{% endif %}
+					  </ul>
+		{% endif %}
+				</nav>
+	</div>	
+	<footer class="footer py-5">
+		<hr class="featurette-divider">
+		<div class="container">
+			<div class="row">
+				<p class="text-footer fw-semibold">&copy;Himakom</p>
 			</div>
 		</div>
-	</div>
-	<div class="bg-light">
-		<div class="container">
-			<nav aria-label="Page navigation example">
-				{% if projects.has_other_pages %}
-			  	<ul class="pagination">
-			    {% if projects.has_previous %}
-			      	<li class="page-item">
-			      		<a class="page-link" href="?page={{ projects.previous_page_number }}">«</a>
-			      	</li>
-			    {% else %}
-			      	<li class="page-item disabled">
-			      		<a class="page-link disabled">«</a>
-			      	</li>
-			    {% endif %}
-			    {% for i in projects.paginator.page_range %}
-			    	{% if projects.number == i %}
-			        	<li class="page-item active"><span class="page-link">{{ i }}</li>
-			      	{% else %}
-			        	<li><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-			      	{% endif %}
-			    {% endfor %}
-			    {% if projects.has_next %}
-			      	<li class="page-item">
-			      		<a class="page-link" href="?page={{ projects.next_page_number }}">»</a>
-			      	</li>
-			    {% else %}
-			    	<li class="page-item disabled">
-			      		<a class="page-link disabled">»</a>
-			      	</li>
-			    {% endif %}
-			  	</ul>
-	{% endif %}
-			</nav>
-		</div>	
-		<footer class="footer py-5">
-			<hr class="featurette-divider">
-			<div class="container">
-				<div class="row">
-					<p class="text-footer fw-semibold">&copy;Himakom</p>
-				</div>
-			</div>
-		</footer>
-	</div>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"></script>
-	<script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+	</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+<script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
 {% endblock %}

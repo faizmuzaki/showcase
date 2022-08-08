@@ -104,7 +104,7 @@ iframe {
 
 .text-jum {
     position: justify;
-    margin: 18vh auto 5vh auto;
+    margin: 15vh auto 5vh auto;
     /* margin-top: 150px; */
     /* font-family: viga; */
 }
@@ -137,40 +137,38 @@ iframe {
     background-color: rgba(250, 192, 19, 0.75);
 }
 
-.custom-shape-divider-bottom,
-.custom-shape-divider-top {
+.custom-shape-divider-top,
+.custom-shape-divider-bottom {
     position: relative;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
 }
 
+.custom-shape-divider-bottom {
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top svg,
 .custom-shape-divider-bottom svg {
     position: relative;
     display: block;
-    width: calc(129% + 1.3px);
+    width: calc(100% + 1.3px);
     height: 150px;
 }
 
+.custom-shape-divider-bottom svg {
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top .shape-fill,
 .custom-shape-divider-bottom .shape-fill {
     fill: #FFFFFF;
 }
 
-.custom-shape-divider-top svg {
-    position: relative;
-    display: block;
-    width: calc(129% + 1.3px);
-    height: 150px;
-    transform: rotateY(180deg);
-}
 
-.custom-shape-divider-top .shape-fill {
-    fill: rgba(250, 192, 19, 0.75);
-}
-
-
-/* showcase */
+/* latest showcase */
 
 .showcase>.container {
     margin: 5vh auto;
@@ -178,12 +176,10 @@ iframe {
 
 .carousel-item {
     width: 100%;
-    height: 470px;
+    height: 400px;
 }
 
 .carousel-inner>.carousel-item>img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
 }
 
@@ -191,6 +187,62 @@ iframe {
     margin: 0 auto;
     text-indent: 1pt;
     background-color: rgba(197, 191, 19, 0.3)
+}
+
+
+/* showcase album */
+
+.album .card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.album .card-body {
+    font-family: 'Rubik';
+}
+
+.album small {
+    color: rgb(170, 170, 170);
+}
+
+.album .btn-group a {
+    background-color: rgba(250, 192, 19, 0.75);
+    color: white;
+    border: rgba(250, 192, 19, 0.75);
+    border-radius: .75rem;
+    -webkit-border-radius: .75rem;
+    -moz-border-radius: .75rem;
+    -ms-border-radius: .75rem;
+    -o-border-radius: .75rem;
+}
+
+.album .btn-group a:hover {
+    background-color: #fac213;
+    color: white;
+    box-shadow: #fac213;
+}
+
+
+/* pagination */
+
+.pagination {
+    font-family: 'Rubik';
+}
+
+.page-link {
+    color: rgb(170, 170, 170);
+}
+
+.page-link:hover {
+    background-color: rgba(250, 192, 19, 0.3);
+    border-color: rgba(250, 192, 19, 0.3);
+    color: rgba(250, 192, 19, 0.55);
+}
+
+.page-item.active .page-link {
+    background-color: rgba(250, 192, 19, 0.75);
+    border-color: rgba(250, 192, 19, 0.75);
 }
 
 
