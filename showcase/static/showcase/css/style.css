@@ -24,8 +24,8 @@
 /* navbar */
 
 .navbar-brand {
-    font-family: viga;
-    size: 3rem;
+    font-family: var(--font-montserrat);
+    font-weight: 700;
 }
 
 .navbar-nav {
@@ -103,7 +103,7 @@
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 130px;
+    height: 16.5vh;
     transform: rotateY(180deg);
 }
 
@@ -177,13 +177,12 @@
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 130px;
+    height: 16.5vh;
 }
 
-
-/* .custom-shape-divider-bottom svg {
+.custom-shape-divider-bottom svg {
     transform: rotateY(180deg);
-} */
+}
 
 .custom-shape-divider-top .shape-fill,
 .custom-shape-divider-bottom .shape-fill {
@@ -225,6 +224,11 @@
     font-family: var(--font-rubik);
 }
 
+.album .card-body .card-text,
+.album small {
+    text-transform: capitalize;
+}
+
 .album small {
     color: var(--clr-grey);
 }
@@ -233,16 +237,11 @@
     color: var(--clr-yellow-dark);
     border: none;
     border-radius: .75rem;
-    -webkit-border-radius: .75rem;
-    -moz-border-radius: .75rem;
-    -ms-border-radius: .75rem;
-    -o-border-radius: .75rem;
 }
 
 .album .btn-group a:hover {
-    background-color: #fac213;
-    color: white;
-    box-shadow: #fac213;
+    background-color: var(--clr-yellow-lighterer);
+    color: var(--clr-yellow-dark);
 }
 
 .img-hover-zoom {
@@ -273,7 +272,7 @@
 
 .bx-search-alt:hover {
     color: var(--clr-yellow);
-    transform: scale(1.1);
+    transform: scale(1.25);
 }
 
 
@@ -290,7 +289,7 @@
 .page-link:hover {
     background-color: var(--clr-yellow-lighterer);
     border-color: var(--clr-yellow-lighterer);
-    color: var(--clr-yellow-lighter);
+    color: var(--clr-yellow-dark);
 }
 
 .page-item.active .page-link {
@@ -303,7 +302,6 @@
 
 .detail {
     font-family: var(--font-rubik);
-    text-align: justify;
 }
 
 .detail h2 {
@@ -323,6 +321,10 @@ iframe {
     font-weight: 600;
 }
 
+.detail .text-description {
+    text-align: justify;
+}
+
 .detail .github-link .bi-github,
 .detail .github-link a {
     color: black;
@@ -331,6 +333,87 @@ iframe {
 
 .detail .github-link a:hover {
     color: var(--clr-yellow);
+}
+
+
+/* ANIMATION */
+
+.shake-left {
+    animation: shake-left 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1s both;
+}
+
+@keyframes shake-left {
+    0%,
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 0 50%;
+    }
+    10% {
+        transform: rotate(0.25deg);
+    }
+    20%,
+    40%,
+    60% {
+        transform: rotate(-0.25deg);
+    }
+    30%,
+    50%,
+    70% {
+        transform: rotate(0.25deg);
+    }
+    80% {
+        transform: rotate(-0.25deg);
+    }
+    90% {
+        transform: rotate(0.25deg);
+    }
+}
+
+.shake-right {
+    animation: shake-right 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@keyframes shake-right {
+    0%,
+    100% {
+        transform: rotate(0deg);
+        transform-origin: 100% 50%;
+    }
+    10% {
+        transform: rotate(0.25deg);
+    }
+    20%,
+    40%,
+    60% {
+        transform: rotate(-0.25deg);
+    }
+    30%,
+    50%,
+    70% {
+        transform: rotate(0.25deg);
+    }
+    80% {
+        transform: rotate(-0.25deg);
+    }
+    90% {
+        transform: rotate(0.25deg);
+    }
+}
+
+.pulsate-bck {
+    animation: pulsate-bck 3s ease-in-out both;
+}
+
+@keyframes pulsate-bck {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 
@@ -352,7 +435,7 @@ iframe {
     .nav-link:hover::after {
         content: '';
         display: block;
-        border-bottom: 3px solid #fac213;
+        border-bottom: 3px solid var(--clr-yellow);
         width: 50%;
         margin: auto;
         padding-bottom: 5px;

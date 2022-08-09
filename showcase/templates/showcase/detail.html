@@ -15,30 +15,30 @@
                     <h5 class="text-heading">Author</h5>
                     <table class="table table-borderless">
                         <tr>
-                            <td>Nama</td>
-                            <td>:</td>
+                            <td class="col-2">Nama</td>
+                            <td class="col-1">:</td>
                             <td>{{ project.author.nama }}</td>
                         </tr>
                         <tr>
-                            <td>NPM</td>
-                            <td>:</td>
+                            <td class="col-2">NPM</td>
+                            <td class="col-1">:</td>
                             <td>{{ project.author.npm }}</td>
                         </tr>
                         <tr>
-                            <td>Angkatan</td>
-                            <td>:</td>
+                            <td class="col-2">Angkatan</td>
+                            <td class="col-1">:</td>
                             <td>{{ project.author.angkatan }}</td>
                         </tr>
                         <tr>
-                            <td>Program Studi</td>
-                            <td>:</td>
+                            <td class="col-2">Program Studi</td>
+                            <td class="col-1">:</td>
                             <td>{{ project.author.program_studi }}</td>
                         </tr>
                     </table>
                     <h5 class="text-heading" style="padding-top: 1rem!important;">Project Description</h5>
                     <table class="table table-borderless">
                         <tr>
-                            <td>{{ project.deskripsi }}</td>
+                            <td class="text-description">{{ project.deskripsi }}</td>
                         </tr>
                     </table>
                     <h5 class="text-heading" style="padding-top: 1rem!important;">Project URL</h5>
@@ -67,7 +67,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <p class="text-footer fw-semibold">&copy;Himakom</p>
+                <p class="text-footer fw-semibold">&copy;Himakom, 2022</p>
             </div>
         </div>
     </footer>
