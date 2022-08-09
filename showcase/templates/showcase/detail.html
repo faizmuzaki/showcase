@@ -12,6 +12,11 @@
                     <iframe style="width:100%; height:445px;" src="{{ project.link_youtube }}"></iframe>
                 </div>
                 <div class="py-3 col-md-4">
+                    <table class="table table-borderless">
+                        <tr>
+                            <td class="link-45deg"><i class="bi bi-link-45deg"></i></i> <a class="text-decoration-none" href="{{ project.link_github }}"> {{ project.link_github }}</a></td>
+                        </tr>
+                    </table>
                     <h5 class="text-heading">Author</h5>
                     <table class="table table-borderless">
                         <tr>
@@ -39,12 +44,6 @@
                     <table class="table table-borderless">
                         <tr>
                             <td class="text-description">{{ project.deskripsi }}</td>
-                        </tr>
-                    </table>
-                    <h5 class="text-heading" style="padding-top: 1rem!important;">Project URL</h5>
-                    <table class="table table-borderless">
-                        <tr>
-                            <td class="github-link"><i class="bi bi-github"></i> <a class="text-decoration-none" href="{{ project.link_github }}"> {{ project.link_github }}</a></td>
                         </tr>
                     </table>
                     <!-- <div class="">Nama: {{ project.author.nama }}</div>
