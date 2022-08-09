@@ -3,8 +3,8 @@
     <section class="py-3">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 offset-lg-3 col-12 text-center title my-3">
-                    <h1>{{ project.judul }}</h1>
+                <div class="col-lg-6 offset-lg-3 col-12 text-center my-3">
+                    <h2>{{ project.judul }}</h2>
                 </div>
             </div>
             <div class="row">
@@ -44,7 +44,7 @@
                     <h5 class="text-heading" style="padding-top: 1rem!important;">Project URL</h5>
                     <table class="table table-borderless">
                         <tr>
-                            <td><a href="{{ project.link_github }}">{{ project.link_github }}</a></td>
+                            <td class="github-link"><i class="bi bi-github"></i> <a class="text-decoration-none" href="{{ project.link_github }}"> {{ project.link_github }}</a></td>
                         </tr>
                     </table>
                     <!-- <div class="">Nama: {{ project.author.nama }}</div>
