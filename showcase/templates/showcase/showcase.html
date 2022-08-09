@@ -26,7 +26,7 @@
                             <p class="card-text">{{ i.judul }}</p>
                             <div class="d-flex justify-content-between align-items-center ">
                                 <div class="btn-group">
-                                    <a href="{% url 'detail' %}?id={{i.id}}" class="btn btn-sm btn-outline-secondary p-2"><i class="bi bi-eye-fill"> </i>View</a>
+                                    <a href="{% url 'detail' %}?id={{i.id}}" class="btn btn-sm btn-outline-secondary px-2"><i class="bi bi-eye-fill"> </i>View</a>
                                 </div>
                                 <small>Author: {{ i.author }}</small>
                             </div>
@@ -70,8 +70,12 @@
 		{% endif %}
 				</nav>
 	</div>	
-	<footer class="footer py-5">
-		<hr class="featurette-divider">
+	<footer class="footer">
+        <div class="custom-shape-divider-footer-top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+            </svg>
+        </div>
 		<div class="container">
 			<div class="row">
 				<p class="text-footer fw-semibold">&copy;Himakom</p>
