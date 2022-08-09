@@ -1,31 +1,64 @@
 {% extends "showcase/layout.html" %} {% block body %}
-<section class="py-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 offset-lg-3 col-12 text-center">
-                <h1>{{ project.judul }}</h1>
+<div class="detail">
+    <section class="py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-12 text-center title my-3">
+                    <h1>{{ project.judul }}</h1>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="py-3 col-md-7">
-                <iframe style="width:100%; height:445px;" src="{{ project.link_youtube }}"></iframe>
-            </div>
-            <div class="py-3 col-md-4">
-                <h5 class="featurette-heading">Author </h5>
-                <div class="font-monospace">Nama : {{ project.author.nama }}</div>
-                <div class="font-monospace">NPM : {{ project.author.npm }}</div>
-                <div class="font-monospace">Angkatan : {{ project.author.angkatan }}</div>
-                <div class="font-monospace">Program Studi : {{ project.author.program_studi }}</div>
-                <h5 class="" style="padding-top: 1rem!important;">Project Description</h5>
-                <div class="font-monospace">{{ project.deskripsi }}</div>
-                <h5 class="" style="padding-top: 1rem!important;">Project URL</h5>
-                <div class="font-monospace">
-                    <a href="{{ project.link_github }}">{{ project.link_github }}</a>
+            <div class="row">
+                <div class="py-3 col-md-7">
+                    <iframe style="width:100%; height:445px;" src="{{ project.link_youtube }}"></iframe>
+                </div>
+                <div class="py-3 col-md-4">
+                    <h5 class="text-heading">Author</h5>
+                    <table class="table table-borderless">
+                        <tr>
+                            <td>Nama</td>
+                            <td>:</td>
+                            <td>{{ project.author.nama }}</td>
+                        </tr>
+                        <tr>
+                            <td>NPM</td>
+                            <td>:</td>
+                            <td>{{ project.author.npm }}</td>
+                        </tr>
+                        <tr>
+                            <td>Angkatan</td>
+                            <td>:</td>
+                            <td>{{ project.author.angkatan }}</td>
+                        </tr>
+                        <tr>
+                            <td>Program Studi</td>
+                            <td>:</td>
+                            <td>{{ project.author.program_studi }}</td>
+                        </tr>
+                    </table>
+                    <h5 class="text-heading" style="padding-top: 1rem!important;">Project Description</h5>
+                    <table class="table table-borderless">
+                        <tr>
+                            <td>{{ project.deskripsi }}</td>
+                        </tr>
+                    </table>
+                    <h5 class="text-heading" style="padding-top: 1rem!important;">Project URL</h5>
+                    <table class="table table-borderless">
+                        <tr>
+                            <td><a href="{{ project.link_github }}">{{ project.link_github }}</a></td>
+                        </tr>
+                    </table>
+                    <!-- <div class="">Nama: {{ project.author.nama }}</div>
+                    <div class="">NPM: {{ project.author.npm }}</div>
+                    <div class="">Angkatan: {{ project.author.angkatan }}</div>
+                    <div class="">Program Studi: {{ project.author.program_studi }}</div>
+                    <div class="">{{ project.deskripsi }}</div>
+                    <div class="">
+                        <a href="{{ project.link_github }}">{{ project.link_github }}</a>
+                    </div> -->
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <footer class="footer py-2">
         <hr class="featurette-divider">
         <div class="container">
@@ -35,8 +68,6 @@
         </div>
     </footer>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-<script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+<scriptr src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></scriptr>
+<scriptr src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></scriptr>
 {% endblock %}

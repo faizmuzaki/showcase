@@ -100,14 +100,10 @@
     text-align: center;
 }
 
-iframe {
-    width: 470px;
-    height: 365px;
-}
 
-.txt {
+/* .txt {
     font-family: viga;
-}
+} */
 
 .jumbotron {
     margin-top: auto;
@@ -266,6 +262,30 @@ iframe {
 .page-item.active .page-link {
     background-color: var(--clr-yellow-light);
     border-color: var(--clr-yellow-light);
+}
+
+
+/* detail */
+
+.detail {
+    font-family: var(--font-rubik);
+    text-align: justify;
+}
+
+.detail .title {
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+iframe {
+    width: 470px;
+    height: 365px;
+}
+
+.detail .text-heading {
+    font-family: var(--font-montserrat);
+    font-weight: 600;
 }
 
 
